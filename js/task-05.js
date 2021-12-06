@@ -3,13 +3,14 @@ const refs = {
   output: document.querySelector('#name-output'),
 };
 
-refs.input.addEventListener('keypress', onInputKeypress);
-refs.output.addEventListener('click', onOutputKeypress);
+refs.input.addEventListener('input', onInputKeypress);
 
 function onInputKeypress(event) {
-  
+  event.preventDefault();
+  if (event.currentTarget.value === '') {
+    refs.output.textContent = 'Anonymous';
+  } else {
+  refs.output.textContent = event.currentTarget.value;
+  };
+  return refs.output.textContent;
 };
-
-function onOutputKeypress() {
-  refs.input.textContent += event.key;
-}
