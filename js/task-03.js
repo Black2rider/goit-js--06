@@ -21,6 +21,9 @@ const createEl = images.map(({url, alt}) =>
      width = "200px" height = "200"></li>`)
      .join('');
 
-const styleGallery = gallery.classList.add('item');
+gallery.style.display = 'flex';
+gallery.style.flexDirection = 'column';
+gallery.style.alignItems= 'center';
 
 gallery.insertAdjacentHTML('afterbegin', createEl);
+
