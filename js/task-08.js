@@ -12,5 +12,11 @@ function onFormLogin(event) {
 
   if (email.value === '' || password.value === '') {
     alert('Empty field!!!')
+  } else {
+    console.log(`Email: ${email.value}, 
+    Password: ${password.value}`);
   };
+
+  event.currentTarget.reset();
+
 };
